@@ -1,0 +1,19 @@
+.data
+X: .word 5
+Y: .word 10
+
+.text
+main:
+    add $t1, $t2, $t3
+    lw $t0, X
+    addi $t1, $t1, 4
+    sub $t2, $t1, $t3
+    beq $t1, $t0, label1
+    j end
+
+label1:
+    and $t3, $t1, $t2
+    or $t0, $t3, $t1
+
+end:
+    slt $t4, $t1, $t2

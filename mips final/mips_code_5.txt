@@ -1,0 +1,18 @@
+.data
+A: .word 10
+B: .word 15
+
+.text
+main:
+    lw $t0, A          
+    lw $t1, B          
+    addi $t2, $t0, 5   
+    sub $t3, $t1, $t0  
+    beq $t3, $zero, label2 
+    j end              
+
+label2:
+    or $t4, $t0, $t1   
+
+end:
+    slt $t6, $t0, $t1  
